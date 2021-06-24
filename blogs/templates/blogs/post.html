@@ -1,0 +1,19 @@
+{% extends "blogs/base.html" %}
+
+{% block page_header %}
+  <h6 class="lead">
+    <a href="{% url 'blogs:blog' blog.id %}">{{ blog }}<a>
+  </h6>
+  <h3>
+    <p>{{ post.title.capitalize }}</p>
+  </h3>
+{% endblock page_header %}
+
+{% block content %}
+  <div class="container-fluid">
+    <p>{{ post.text }}</p>
+    <p>{{ post.date_added|date:'d M, Y h:i' }}</p>
+  </div>
+ <h6><a href="{% url 'blogs:edit_post' post.id %}">Edit post</a></h6>
+
+{% endblock content %}
