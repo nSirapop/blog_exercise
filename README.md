@@ -1,2 +1,1 @@
-# blog_exercise
-My first exercise is from Python Crash Course 2nd edition (Eric Matthes). It has the app named "blogs" that you can sign up and create your own whatever topic blog. In the blog, you can design what you want to do, such as challenge tracking, daily diary, what to do in each day, and much much more.
+Hello, My name is Huy. I am new to programmin. Now I am learning Python and django framework. I will keep learning until I dare to say that I am a full-time programmer. Thank you for looking into my git.
