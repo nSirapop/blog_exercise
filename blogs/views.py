@@ -61,7 +61,7 @@ def new_blog(request):
 @login_required
 def new_post(request, blog_id):
     """Add a post into the blog"""
-    blog = get_object_or_404(Blog, id=blog)
+    blog = get_object_or_404(Blog, id=blog_id)
 
     if request.method != 'POST':
         form = PostForm()
