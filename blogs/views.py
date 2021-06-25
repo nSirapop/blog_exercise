@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_objct_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
 
@@ -25,7 +25,7 @@ def blogs(request):
 @login_required
 def blog(request, blog_id):
     """A page for each blog"""
-    blog = get_objct_or_404(Blog, id=blog_id)
+    blog = get_object_or_404(Blog, id=blog_id)
     check_owner(blog, request)
     posts = blog.post_set.order_by('-date_added')
     context = {'blog': blog, 'posts': posts}
@@ -34,7 +34,7 @@ def blog(request, blog_id):
 @login_required
 def post(request, post_id):
     """A post in the blog."""
-    post = get_objct_or_404(Post, id=post_id)
+    post = get_object_or_404(Post, id=post_id)
     blog = post.blog
     check_owner(blog, request)
     context = {'post': post, 'blog': blog}
@@ -61,7 +61,7 @@ def new_blog(request):
 @login_required
 def new_post(request, blog_id):
     """Add a post into the blog"""
-    blog = get_objct_or_404(Blog, id=blog)
+    blog = get_object_or_404(Blog, id=blog)
 
     if request.method != 'POST':
         form = PostForm()
@@ -79,7 +79,7 @@ def new_post(request, blog_id):
 
 @login_required
 def edit_post(request, post_id):
-    post = get_objct_or_404(Post, id=post_id)
+    post = get_object_or_404(Post, id=post_id)
     blog = post.blog
     check_owner(blog, request)
 
